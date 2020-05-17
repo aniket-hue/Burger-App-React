@@ -3,7 +3,8 @@ import Aux from '../../hoc/Aux';
 import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
 import Modal from '../../components/UI/Modals';
-
+import axios from '../../axios';
+import Spinner from '../../components/UI/Spinner/Spinner';
 const PRICES = {
     salad: .5,
     bacon: 2,
@@ -22,7 +23,8 @@ class BurgerBuilder extends Component {
                 bacon: 0
             },
             totalPrice: 4,
-            purchasing: false
+            purchasing: false,
+            loading: false
         }
     }
 
@@ -73,11 +75,30 @@ class BurgerBuilder extends Component {
 
     modalHandler = () => {
         const temp = this.state.purchasing;
+
         this.setState({ purchasing: !temp });
     }
 
     purchaseContinue = () => {
-        console.log("Continue to Checkout");
+
+        this.setState({ loading: true });
+        const temp = {
+            ingredients: this.state.ingredients,
+            price: this.state.price,
+            name: 'Aniket',
+            Address: 'Bakers Street'
+        }
+
+        axios.post('/orders.json', temp)
+            .then(response => {
+                console.log(this.state.loading + " asd");
+                this.setState({ loading: false, purchasing: false })
+            })
+            .catch(error => {
+                this.setState({ loading: false })
+            });
+
+        console.log(this.state.loading + "asda");
     }
 
     purchaseCancel = () => {
@@ -88,8 +109,10 @@ class BurgerBuilder extends Component {
         let flag = this.purchaseAble();
         // console.log(this)
         // console.log(this.state.purchasing)
+
         return (
             <Aux>
+                {/* <Spinner/> */}
                 <Burger ingredients={this.state.ingredients} />
                 <BuildControls
                     price={this.state.totalPrice}
@@ -97,15 +120,17 @@ class BurgerBuilder extends Component {
                     Less={this.removeIngredient}
                     purchaseAble={flag}
                     handle={this.modalHandler}
+                    loading={this.state.loading}
                 />
-                {this.state.purchasing ?
-                    <Modal
+                {this.state.purchasing ? this.state.loading ?
+                    <Spinner /> : <Modal
                         ingredients={this.state.ingredients}
                         clicked={this.modalHandler}
                         continue={this.purchaseContinue}
                         cancel={this.purchaseCancel}
-                        show={this.state.purchasing}/> :
-                    <p></p>
+                        show={this.state.purchasing} />
+                    : null
+
                 }
             </Aux>
         );
