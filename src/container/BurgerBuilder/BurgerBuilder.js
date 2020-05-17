@@ -17,15 +17,26 @@ class BurgerBuilder extends Component {
         super(props);
         this.state = {
             ingredients: {
-                salad: 0,
-                meat: 0,
-                cheese: 0,
-                bacon: 0
+                salad: null,
+                meat: null,
+                cheese: null,
+                bacon: null
             },
             totalPrice: 4,
             purchasing: false,
-            loading: false
+            loading: false,
+            startLoad: false
         }
+    }
+
+    componentDidMount() {
+        // console.log(this.state.ingredients[0]);
+        axios.get('https://react-my-burger-f2.firebaseio.com/ingredients.json', { crossdomain: true }).then(res => {
+            // console.log(this.state.ingredients[0]);
+            // console.log(this.state.ingredients);
+            this.setState({ ingredients: res.data })
+            this.setState({ startLoad: true })
+        })
     }
 
     purchaseAble = () => {
@@ -105,34 +116,38 @@ class BurgerBuilder extends Component {
         console.log("OK Cancel");
     }
 
+
+
     render() {
         let flag = this.purchaseAble();
         // console.log(this)
         // console.log(this.state.purchasing)
 
         return (
-            <Aux>
-                {/* <Spinner/> */}
-                <Burger ingredients={this.state.ingredients} />
-                <BuildControls
-                    price={this.state.totalPrice}
-                    More={this.addIngredientHandler}
-                    Less={this.removeIngredient}
-                    purchaseAble={flag}
-                    handle={this.modalHandler}
-                    loading={this.state.loading}
-                />
-                {this.state.purchasing ? this.state.loading ?
-                    <Spinner /> : <Modal
-                        ingredients={this.state.ingredients}
-                        clicked={this.modalHandler}
-                        continue={this.purchaseContinue}
-                        cancel={this.purchaseCancel}
-                        show={this.state.purchasing} />
-                    : null
-
+            <div>
+                {
+                    !this.state.startLoad ? <Spinner /> :
+                        <Aux>
+                            <Burger ingredients={this.state.ingredients} />
+                            <BuildControls
+                                price={this.state.totalPrice}
+                                More={this.addIngredientHandler}
+                                Less={this.removeIngredient}
+                                purchaseAble={flag}
+                                handle={this.modalHandler}
+                                loading={this.state.loading}
+                            />
+                            {this.state.purchasing ? this.state.loading ?
+                                <Spinner /> : <Modal
+                                    ingredients={this.state.ingredients}
+                                    clicked={this.modalHandler}
+                                    continue={this.purchaseContinue}
+                                    cancel={this.purchaseCancel}
+                                    show={this.state.purchasing} />
+                                : null}
+                        </Aux>
                 }
-            </Aux>
+            </div>
         );
     }
 }
