@@ -22,7 +22,7 @@ class BurgerBuilder extends Component {
                 cheese: null,
                 bacon: null
             },
-            totalPrice: 4,
+            totalPrice: 0,
             purchasing: false,
             loading: false,
             startLoad: false
@@ -104,16 +104,16 @@ class BurgerBuilder extends Component {
             .then(response => {
                 console.log(this.state.loading + " asd");
                 this.setState({ loading: false, purchasing: false })
+                alert('Your order is successfully received');
             })
             .catch(error => {
                 this.setState({ loading: false })
             });
-
         console.log(this.state.loading + "asda");
     }
 
     purchaseCancel = () => {
-        console.log("OK Cancel");
+        this.setState({ purchasing: false });
     }
 
 
