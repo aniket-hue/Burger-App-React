@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/aniket-hue/Burger-App-React.git/static/css/main.91968153.chunk.css",
-    "main.js": "/aniket-hue/Burger-App-React.git/static/js/main.0d780913.chunk.js",
-    "main.js.map": "/aniket-hue/Burger-App-React.git/static/js/main.0d780913.chunk.js.map",
-    "runtime-main.js": "/aniket-hue/Burger-App-React.git/static/js/runtime-main.25f1530b.js",
-    "runtime-main.js.map": "/aniket-hue/Burger-App-React.git/static/js/runtime-main.25f1530b.js.map",
-    "static/js/2.c7cd66a3.chunk.js": "/aniket-hue/Burger-App-React.git/static/js/2.c7cd66a3.chunk.js",
-    "static/js/2.c7cd66a3.chunk.js.map": "/aniket-hue/Burger-App-React.git/static/js/2.c7cd66a3.chunk.js.map",
-    "index.html": "/aniket-hue/Burger-App-React.git/index.html",
-    "precache-manifest.6f69318145f5a4f95146c13755792301.js": "/aniket-hue/Burger-App-React.git/precache-manifest.6f69318145f5a4f95146c13755792301.js",
-    "service-worker.js": "/aniket-hue/Burger-App-React.git/service-worker.js",
-    "static/css/main.91968153.chunk.css.map": "/aniket-hue/Burger-App-React.git/static/css/main.91968153.chunk.css.map",
-    "static/js/2.c7cd66a3.chunk.js.LICENSE.txt": "/aniket-hue/Burger-App-React.git/static/js/2.c7cd66a3.chunk.js.LICENSE.txt",
-    "static/media/logo.png": "/aniket-hue/Burger-App-React.git/static/media/logo.b8503d26.png"
+    "main.css": "/Burger-App-React/static/css/main.91968153.chunk.css",
+    "main.js": "/Burger-App-React/static/js/main.baf5c40e.chunk.js",
+    "main.js.map": "/Burger-App-React/static/js/main.baf5c40e.chunk.js.map",
+    "runtime-main.js": "/Burger-App-React/static/js/runtime-main.852e8063.js",
+    "runtime-main.js.map": "/Burger-App-React/static/js/runtime-main.852e8063.js.map",
+    "static/js/2.c7cd66a3.chunk.js": "/Burger-App-React/static/js/2.c7cd66a3.chunk.js",
+    "static/js/2.c7cd66a3.chunk.js.map": "/Burger-App-React/static/js/2.c7cd66a3.chunk.js.map",
+    "index.html": "/Burger-App-React/index.html",
+    "precache-manifest.f84c83f880c6330601c5351eff32c8bc.js": "/Burger-App-React/precache-manifest.f84c83f880c6330601c5351eff32c8bc.js",
+    "service-worker.js": "/Burger-App-React/service-worker.js",
+    "static/css/main.91968153.chunk.css.map": "/Burger-App-React/static/css/main.91968153.chunk.css.map",
+    "static/js/2.c7cd66a3.chunk.js.LICENSE.txt": "/Burger-App-React/static/js/2.c7cd66a3.chunk.js.LICENSE.txt",
+    "static/media/logo.png": "/Burger-App-React/static/media/logo.b8503d26.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.25f1530b.js",
+    "static/js/runtime-main.852e8063.js",
     "static/js/2.c7cd66a3.chunk.js",
     "static/css/main.91968153.chunk.css",
-    "static/js/main.0d780913.chunk.js"
+    "static/js/main.baf5c40e.chunk.js"
   ]
 }
