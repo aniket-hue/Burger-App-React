@@ -1,9 +1,7 @@
-I'm using firebase for database. To use firebase add your link to axios.js
+For Live Demo - 
+https://aniket-hue.github.io/Burger-App-React/
 
-First install this
 
-npm install axios
-
-Then to start
-
-npm start
+1) npm install
+2) npm install axios
+3) npm start
