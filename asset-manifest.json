@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Burger-App-React/static/css/main.e47e9b72.chunk.css",
-    "main.js": "/Burger-App-React/static/js/main.f5177459.chunk.js",
-    "main.js.map": "/Burger-App-React/static/js/main.f5177459.chunk.js.map",
+    "main.js": "/Burger-App-React/static/js/main.465d6624.chunk.js",
+    "main.js.map": "/Burger-App-React/static/js/main.465d6624.chunk.js.map",
     "runtime-main.js": "/Burger-App-React/static/js/runtime-main.852e8063.js",
     "runtime-main.js.map": "/Burger-App-React/static/js/runtime-main.852e8063.js.map",
     "static/js/2.a5a5445c.chunk.js": "/Burger-App-React/static/js/2.a5a5445c.chunk.js",
     "static/js/2.a5a5445c.chunk.js.map": "/Burger-App-React/static/js/2.a5a5445c.chunk.js.map",
     "index.html": "/Burger-App-React/index.html",
-    "precache-manifest.439429ecd8b2346db21b2dcbb9131cc1.js": "/Burger-App-React/precache-manifest.439429ecd8b2346db21b2dcbb9131cc1.js",
+    "precache-manifest.ddce4f9de8db51965d177f8c7e70a29b.js": "/Burger-App-React/precache-manifest.ddce4f9de8db51965d177f8c7e70a29b.js",
     "service-worker.js": "/Burger-App-React/service-worker.js",
     "static/css/main.e47e9b72.chunk.css.map": "/Burger-App-React/static/css/main.e47e9b72.chunk.css.map",
     "static/js/2.a5a5445c.chunk.js.LICENSE.txt": "/Burger-App-React/static/js/2.a5a5445c.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.852e8063.js",
     "static/js/2.a5a5445c.chunk.js",
     "static/css/main.e47e9b72.chunk.css",
-    "static/js/main.f5177459.chunk.js"
+    "static/js/main.465d6624.chunk.js"
   ]
 }
