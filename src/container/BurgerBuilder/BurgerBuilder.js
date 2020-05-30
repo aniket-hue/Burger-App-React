@@ -30,7 +30,6 @@ class BurgerBuilder extends Component {
     }
 
     componentDidMount() {
-        // console.log(this.state.ingredients[0]);
         axios.get('https://react-my-burger-f2.firebaseio.com/ingredients.json', { crossdomain: true }).then(res => {
             // console.log(this.state.ingredients[0]);
             // console.log(this.state.ingredients);
@@ -95,6 +94,7 @@ class BurgerBuilder extends Component {
         for (let i in this.state.ingredients) {
             queryparams.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.state.ingredients[i]));
         }
+        queryparams.push('price=' + this.state.totalPrice);
         
         const queryString = queryparams.join('&');
         this.props.history.push({
@@ -102,28 +102,7 @@ class BurgerBuilder extends Component {
             search: '?' + queryString
         });
 
-        //     this.setState({ loading: true });
-        //     const temp = {
-        //         ingredients: this.state.ingredients,
-        //         price: this.state.price,
-        //         name: 'Aniket',
-        //         Address: 'Bakers Street'
-        //     }
-
-        //     axios.post('/orders.json', temp)
-        //         .then(response => {
-        //             console.log(this.state.loading + " asd");
-        //             this.setState({ loading: false, purchasing: false })
-        //             alert('Your order is successfully received');
-        //         })
-        //         .catch(error => {
-        //             this.setState({ loading: false })
-        //         });
-        //     console.log(this.state.loading + "asda");
-        // }
-
-        // purchaseCancel = () => {
-        //     this.setState({ purchasing: false });
+        
     }
 
 
@@ -148,7 +127,8 @@ class BurgerBuilder extends Component {
                                 loading={this.state.loading}
                             />
                             {this.state.purchasing ? this.state.loading ?
-                                <Spinner /> : <Modal
+                                <Spinner /> :
+                                <Modal
                                     ingredients={this.state.ingredients}
                                     clicked={this.modalHandler}
                                     continue={this.purchaseContinue}

@@ -9,17 +9,21 @@ class Checkout extends React.Component {
             meat: 1,
             cheese: 1,
             bacon: 1
-        }
+        },
+        price: 0
     }
 
     componentDidMount() {
         const query = new URLSearchParams(this.props.location.search);
         const ingredients = {};
+        let price = 0;
         for (let param of query.entries()) {
-            ingredients[param[0]] = parseInt(param[1]);
+            if (param[0] === 'price')
+                price = parseInt(param[1]);
+            else
+                ingredients[param[0]] = parseInt(param[1]);
         }
-        // console.log(ingredients);
-        this.setState({ ingredients: ingredients });
+        this.setState({ ingredients: ingredients, price: price });
 
     }
 
@@ -43,7 +47,7 @@ class Checkout extends React.Component {
                 <Route
                     path={this.props.match.path + '/contact-data'}
                     exact
-                    render={() => (<ContactData ingredients={this.state.ingredients} />)} />
+                    render={(props) => (<ContactData price={this.state.price} ingredients={this.state.ingredients} {...props  } />)} />
             </div>
 
         );
