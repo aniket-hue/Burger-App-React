@@ -31,7 +31,7 @@ class ContactData extends React.Component {
             .then(response => {
                 this.setState({ loading: false })
                 alert('Your order is successfully received');
-                this.props.history.push('/');
+                this.props.history.push('/Burger-App-React');
             })
             .catch(error => {
                 this.setState({ loading: false })
