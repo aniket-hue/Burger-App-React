@@ -91,29 +91,39 @@ class BurgerBuilder extends Component {
     }
 
     purchaseContinue = () => {
-
-        this.setState({ loading: true });
-        const temp = {
-            ingredients: this.state.ingredients,
-            price: this.state.price,
-            name: 'Aniket',
-            Address: 'Bakers Street'
+        const queryparams = [];
+        for (let i in this.state.ingredients) {
+            queryparams.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.state.ingredients[i]));
         }
+        
+        const queryString = queryparams.join('&');
+        this.props.history.push({
+            pathname: '/checkout',
+            search: '?' + queryString
+        });
 
-        axios.post('/orders.json', temp)
-            .then(response => {
-                console.log(this.state.loading + " asd");
-                this.setState({ loading: false, purchasing: false })
-                alert('Your order is successfully received');
-            })
-            .catch(error => {
-                this.setState({ loading: false })
-            });
-        console.log(this.state.loading + "asda");
-    }
+        //     this.setState({ loading: true });
+        //     const temp = {
+        //         ingredients: this.state.ingredients,
+        //         price: this.state.price,
+        //         name: 'Aniket',
+        //         Address: 'Bakers Street'
+        //     }
 
-    purchaseCancel = () => {
-        this.setState({ purchasing: false });
+        //     axios.post('/orders.json', temp)
+        //         .then(response => {
+        //             console.log(this.state.loading + " asd");
+        //             this.setState({ loading: false, purchasing: false })
+        //             alert('Your order is successfully received');
+        //         })
+        //         .catch(error => {
+        //             this.setState({ loading: false })
+        //         });
+        //     console.log(this.state.loading + "asda");
+        // }
+
+        // purchaseCancel = () => {
+        //     this.setState({ purchasing: false });
     }
 
 

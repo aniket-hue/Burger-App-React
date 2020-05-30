@@ -1,0 +1,12 @@
+.container{
+    text-align: center;
+    width: 80%;
+    margin: auto;
+
+}
+
+@media(min-width:600px){
+    .container{
+        width: 500px;
+    }
+}
