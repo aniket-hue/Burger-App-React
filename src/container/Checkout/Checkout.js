@@ -35,8 +35,6 @@ class Checkout extends React.Component {
         this.props.history.replace('/checkout/contact-data');
     }
     render() {
-        console.log(this.props)
-        console.log(this.state.ingredients)
         return (
             <div>
                 <CheckoutSum
