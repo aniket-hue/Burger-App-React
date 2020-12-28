@@ -4,10 +4,17 @@ const buildControl = (props) => {
   return (
     <div className={classes.BuildControl}>
       <div className={classes.Label}>{props.label}</div>
-      <button className={classes.Less} onClick={props.remove}>
+      <button
+        className={classes.Less}
+        onClick={props.remove}
+        disabled={props.ingredients[props.label.toLowerCase()] === 0}
+      >
         Less
       </button>
-      <button className={classes.More} onClick={props.added}>
+      <button
+        className={classes.More}
+        onClick={props.added}
+      >
         More
       </button>
     </div>
